@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>M1 Mastery 1</title>
+        <script src="./Javascript/script.js" defer></script>
+        <link rel="stylesheet" href="./CSS/style.css" />
+        <!--font links-->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    </head>
+
+    <!--Header Divs-->
+    <header>
+        <ul class="nav-header">
+            <li><a href="index.html" class="links">HOME </a></li>
+            <li><a href="shop.html" class="links">SHOP </a></li>
+            <li><a href="contact.html" class="links">CONTACT </a></li>
+            <li><a href="mission.html" class="links">MISSION </a></li>
+            <li class="navlogo">
+                <img src="Images/M7logo.png" alt="Website Logo" class="links" />
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <h2>CUSTOM TEE ORDER FORM</h2>
+
+        <form id="form">
+            <!--Two text inputs-->
+            <div class="nameInput">
+                <label for="fname">Full Name: </label>
+                <input type="text" id="fname" name="fname" />
+                <br /><br />
+
+                <label for="email">Email Address: </label>
+                <input type="text" id="email" name="email" />
+                <br />
+            </div>
+
+            <!-- Color-changing T shirt image -->
+            <div class="gallery-container">
+                <div class="image-container"> 
+                    <img
+                        id="whiteTShirt"
+                        src="Images/whiteTshirt.png"
+                        alt="White Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="blackTShirt"
+                        src="Images/blackTshirt.png"
+                        alt="Black Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="redTShirt"
+                        src="Images/redTshirt.png"
+                        alt="Red Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="orangeTShirt"
+                        src="Images/orangeTshirt.png"
+                        alt="Orange Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="yellowTShirt"
+                        src="Images/yellowTshirt.png"
+                        alt="Yellow Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="greenTShirt"
+                        src="Images/greenTshirt.png"
+                        alt="Green Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="blueTShirt"
+                        src="Images/blueTshirt.png"
+                        alt="Blue Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="purpleTShirt"
+                        src="Images/purpleTshirt.png"
+                        alt="Purple Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                    <img
+                        id="pinkTShirt"
+                        src="Images/pinkTshirt.png"
+                        alt="Pink Shirt"
+                        width="600"
+                        height="400"
+                        class="image"
+                    /><br />
+                </div>
+            </div>
+
+            <!--2 radio buttons-->
+            <p>Choose the color:</p>
+            <div id="Color">
+                <label><input type="radio" id="Red" name="color" value="Red" />
+                Red</label><br>
+
+                <label><input type="radio" id="Orange" name="color" value="Orange" />
+                Orange</label><br>
+
+                <label><input type="radio" id="Yellow" name="color" value="Yellow" />
+                Yellow</label><br>
+
+                <label><input type="radio" id="Green" name="color" value="Green" />
+                Green</label><br>
+
+                <label><input type="radio" id="Blue" name="color" value="Blue" />
+                Blue</label><br>
+
+                <label><input type="radio" id="Purple" name="color" value="Purple" />
+                Purple</label><br>
+
+                <label><input type="radio" id="Pink" name="color" value="Pink" />
+                Pink</label><br>
+
+                <label><input type="radio" id="White" name="color" value="White" />
+                White</label><br>
+
+                <label><input type="radio" id="Black" name="color" value="Black" />
+                Black</label><br>
+
+                <label><input type="radio" id="Brown" name="color" value="Brown" />
+                Brown</label><br>
+
+                <label><input type="radio" id="Gray" name="color" value="Gray" />
+                Gray</label><br>
+            </div>
+
+            <!--Dropdown menu with 2 options-->
+            <p>Choose t-shirt material:</p>
+            <select name="material" id="material" title="material">
+                <option value="15"name= "material"title= "Cotton">Cotton($15)</option>
+                <option value="12"name= "material"title= "Dry fit">Dry Fit($12)</option>
+                <option value="18"name= "material"title= "Satin">Satin($18)</option>
+                <option value="10"name= "material"title= "Polyester">Polyester($10)</option>
+            </select>
+            <br />
+
+            <!--3 checkboxes-->
+            <p>Choose the application method for your shirt design :</p>
+            <label><input type="checkbox" id="Vinyl" name="material" value="5" />
+            Vinyl Press($5.00)</label>
+
+            <label><input type="checkbox" id="Embrodiery" name="material" value="10"/>
+            Embrodiered Stitching($10.00)</label>
+
+            <label><input type="checkbox" id="Screen" name="material" value="8"/>
+            Screen-Printing($8.00)</label>
+            <br />
+            <!--file upload button-->
+            <p>
+                <label for="img"
+                    >Submit your T-shirt design here!</label
+                >
+            </p>
+            <input type="file" id="img" name="img" />
+
+            <!--resizeable text box for entering message-->
+            <p>
+                <label for="messagebox"
+                    >Please provide any specifications of the design you would
+                    like, if there are any:
+                </label>
+            </p>
+            <textarea
+                class="color"
+                id="messagebox"
+                name="messagebox"
+                rows="4"
+                cols="50"
+            >
+Enter here</textarea
+            >
+            <br />
+
+            <!--submit and reset buttons-->
+            <input type="submit" value="Submit" id="submit" /><br>
+            <input type="reset" value="Reset" id="reset" />
+
+            
+            </div>
+        </form>
+        
+        <!--INVOICE ORDER RECIEPT-->
+            <div id="orderReceipt">
+              <h2>Order Receipt</h2>
+
+              <p>Name :</p>
+                <p id="FullName"></p>
+
+              <p>Email :</p>
+                <p id="EmailAddress"></p>
+
+              <p>Color :</p>
+                <p id="TShirtColor"></p>
+
+              <p>Material Payment :</p>
+                <p id="MaterialType"></p>
+              
+              <p>Application Payment :</p>
+                <p id="AppType"></p>
+
+              <p>Total : </p>
+    </main>
+</html>
