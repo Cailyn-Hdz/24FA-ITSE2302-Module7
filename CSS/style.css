@@ -1,0 +1,317 @@
+/*INDEX PAGE CSS*/
+
+/*CSS for header*/
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*CSS for all links on the navbar*/
+a.links {
+  list-style-type: none;
+  display: flex;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: bold;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  padding-right: 120px;
+}
+
+/*my navigation menu container*/
+ul.nav-header {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  background: black;
+  height: 50px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/*CSS for images on the navbar*/
+li.navlogo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 45px;
+}
+
+/*CSS for website introduction banner below navbar*/
+.image2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+}
+
+/*CSS for website options*/
+.image3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/*CSS for the websites main body*/
+.index-main {
+  display: flex;
+  flex-direction: column;
+  border-bottom-style: none;
+}
+
+/*CSS for the Mission section title*/
+.mission-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  background: pink;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-style: none;
+}
+
+/*CSS for the Mission section*/
+.mission-statement {
+  display: flex;
+  font-size: 18px;
+  background: rgb(192, 246, 255);
+  width: 100%;
+  height: 180px;
+  align-items: center;
+  border-bottom-style: none;
+}
+
+/*CSS for header text*/
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 80px;
+  color: black;
+  border-bottom-style: none;
+}
+
+/*CSS for paragraph text*/
+p {
+  font-family: "Cormorant Garamond", serif;
+  color: rgb(0, 0, 0);
+  font-style: normal;
+  border-bottom-style: none;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  font-size: 50px;
+}
+
+section {
+  border-bottom-style: none;
+}
+
+/*Media query for tablet/smaller screens*/
+@media only screen and (max-width: 800px) {
+  a.links {
+      list-style-type: none;
+      display: flex;
+      font-family: "Inter", sans-serif;
+      align-items: center;
+      max-height: 50px;
+      width: 80%;
+      text-decoration: none;
+      color: black;
+  }
+
+  .image2 {
+      max-width: 400px;
+  }
+
+  .image3 {
+      display: flex;
+  }
+
+  section.mission-title {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+  }
+
+  section.mission-statement {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+  }
+
+  h1 {
+      font-size: 60px;
+  }
+
+  p {
+      font-size: 15px;
+  }
+}
+
+/*Media query for phone*/
+@media only screen and (max-width: 500px) {
+  ul.nav-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+  }
+
+  .image2 {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+  }
+
+  .image3 {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+  }
+
+  section.mission-title {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+  }
+
+  section.mission-statement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
+      max-height: 100%;
+  }
+
+  h1 {
+      font-size: 40px;
+  }
+
+  p {
+      font-size: 12px;
+  }
+}
+
+/*CONTACT PAGE CSS*/
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 75px;
+  color: black;
+  border-bottom-style: none;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 75px;
+  color: black;
+  background: navy;
+  border-bottom-style: none;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-family: "Cormorant Garamond", serif;
+  color: rgb(0, 0, 0);
+  font-style: bold;
+  font-size: 30px;
+}
+
+.gallery-container {
+  width: 100%;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  overflow-y: hidden; /* Disables vertical scrolling */
+  white-space: nowrap; /* Prevents wrapping of images */
+  margin: 0 auto; /* Centers the container */
+}
+
+.image-container {
+  display: inline-flex; /* Makes the images align horizontally */
+}
+
+.image-container img {
+  height: 390px;
+  margin-right: 5px;
+}
+
+form {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 45px;
+  background: rgb(243, 243, 243);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  color: white;
+  background-color: black;
+}
+
+input {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  border: none;
+}
+
+#submit {
+  background: black;
+  color: white;
+  width: 20%;
+  height:fit-content;
+}
+
+#reset {
+  background: black;
+  color: white;
+  width: 20%;
+  height:fit-content;
+}
+
+textarea {
+  display: flex;
+  flex-direction: column;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(216, 216, 216);
+  border: none;
+}
+
+
