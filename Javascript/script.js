@@ -1,174 +1,105 @@
-// Creates event lister for the form
-// 1. Event lister
-document.getElementById("form").addEventListener("submit", handleFormSubmit)
-console.log(document.getElementById("form"))
-// 2. const
-  const nameInput = document.getElementById("fname");
-  const emailInput = document.getElementById("email");
-  const designImage = document.getElementById("img");
+//1. constant
+const fullName = document.getElementById("fname"); // text input
+const email = document.getElementById("email"); // text input
+const shirtRed = document.getElementById("Red"); // radio input
+const shirtYellow = document.getElementById("Yellow"); // radio inputs
+const shirtGreen = document.getElementById("Green"); // radio inputs
+const shirtBlue = document.getElementById("Blue"); // radio inputs
+const shirtPurple = document.getElementById("Purple"); // radio inputs
+const shirtPink = document.getElementById("Pink"); // radio inputs
+const shirtWhite = document.getElementById("White"); // radio inputs
+const shirtBlack = document.getElementById("Black"); // radio inputs
+const shirtBrown = document.getElementById("Brown"); // radio inputs
+const shirtGray = document.getElementById("Gray"); // radio inputs
+const shirtOrange = document.getElementById("Orange"); // radio inputs
+const shirtMaterial = document.querySelectorAll("option"); // shirts options
+const form = document.getElementById("form");
 
-// Function 1 calls for function 2 and 3 and displays all the inputed values
-function handleFormSubmit(event) {
-  event.preventDefault();
-  console.log(validateForm())
-
-  // Calls validation function
-  if (validateForm()) {
-    const totalAmount = calculateTotal();
-
-    // Display all values to the console
-    console.log("Full Name: " + document.getElementById("fname").value);
-    console.log("Email Address: " + document.getElementById("email").value);
-
-    // If none of the radio buttons are clicked nothing will be displayed
-    if (document.getElementById("Red").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Red").value);
-    }
-
-    if (document.getElementById("Orange").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Orange").value);
-    }
-
-    if (document.getElementById("Yellow").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Yellow").value);
-    }
-
-    if (document.getElementById("Green").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Green").value);
-    }
-
-    if (document.getElementById("Blue").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Blue").value);
-    }
-
-    if (document.getElementById("Purple").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Purple").value);
-    }
-
-    if (document.getElementById("Pink").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Pink").value);
-    }
-
-    if (document.getElementById("White").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("White").value);
-    }
-
-    if (document.getElementById("Black").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Black").value);
-    }
-
-    if (document.getElementById("Brown").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Brown").value);
-    }
-
-    if (document.getElementById("Gray").checked) {
-      console.log("T-Shirt Color: "+ document.getElementById("Gray").value);
-    }
-    console.log("Material type: " + document.getElementById("material").value);
-    console.log("Checked Items Total: $" + totalAmount);
-    console.log("Message: " + document.getElementById("messagebox").value);
-    
- }
+function formHandler(e) {
+  e.preventDefault();
+//2. if and else
+  if (!validation(fullName.value)) {
+    fullName.focus();
+    return;
+  } else if (!validation(email.value)) {
+    email.focus();
+    return;
+  }
+  recieptCalc();
 }
-  
 
-// Function 2 validates every field
-function validateForm() {
+//3. event listener
+form.addEventListener("submit", formHandler);
 
-// 3. String Methods (trim)
-  const email = emailInput.value.trim();
 
+//validation of the form
+function validation(str) {
+  // console.log(str);
+  if (str == "" || !str) {
+    //alert method to guide the user when submitting incorrect input
+    alert("Please Enter Proper Data.");
 //4. Boolean
-  // Checks if the full name is empty
-  if (nameInput.value.trim() == "") {
-    alert("You must input your full name");
-    nameInput.focus();
     return false;
   }
 
-  // Checks if the email address is empty
-  if (emailInput.value.trim() == "") {
-    alert("You must input an email");
-    emailInput.focus();
-    return false;
-  }
-
-  // Checks if email address is valid
-  if (!emailInput || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-    alert("Email is not valid, please re-enter");
-    emailInput.focus();
-    return false;
-  }
 
   return true;
 }
 
-// Function 3 calculating the total cost of the items purchased by the user
-function calculateTotal() {
-// 5. Var
-  var total = 0;
+//5. Let
+function recieptCalc() {
+  let total = 0;
 
-  // Check if Vinyl checkbox is selected
-  if (document.getElementById("Vinyl").checked) {
-    total += parseInt(document.getElementById("Vinyl").value);
-  }
 
-  // Check if Embrodiery checkbox is selected
-  if (document.getElementById("Embrodiery").checked) {
-  total += parseInt(document.getElementById("Embrodiery").value);
-  }
-
-  // Check if Screen checkbox is selected
-  if (document.getElementById("Screen").checked) {
-  total += parseInt(document.getElementById("Screen").value);
-  }
-
-  // Returns the total amount for all items selected
-  return total;
-}
-
-// Function 4 displays receipt total for the order
-var button = document.getElementById("submit");
-
-function fun1() {
-  // Get the input elements
-  const nameInput = document.getElementById("fname");
-  const emailInput = document.getElementById("email");
-  const colorOptions = document.getElementsByName("color");
-  const materialSelect = document.getElementsByName("material");
-  const appOptions = document.getElementsByName("app");
-
-  // Display name and email
-  document.getElementById("FullName").innerHTML = nameInput.value;
-  document.getElementById("EmailAddress").innerHTML = emailInput.value;
-
-  // Get selected color
-// 6. Let
-  let colorInput = "";
-// 7. Arithmetic Operators
-// 8. Loop
-  for (let i = 0; i < colorOptions.length; i++) {
-    if (colorOptions[i].checked) {
-      colorInput = colorOptions[i].value;
+  // Get the selected shirt color
+  let shirtColor = "";
+//6. Loops
+  const shirtColors = [shirtRed, shirtYellow, shirtGreen, shirtBlue, shirtPurple, shirtPink, shirtWhite, shirtBlack, shirtBrown, shirtGray];
+  for (let color of shirtColors) {
+    if (color.checked) {
+      shirtColor = color.value;
       break;
     }
   }
-  document.getElementById("TShirtColor").innerHTML = colorInput;
 
-  // Get selected material from dropdown
-  const materialInput = materialSelect.value;
-  document.getElementById("MaterialType").innerHTML = materialInput;
 
-  // Get selected application
-  let appInput = "";
-  for (let i = 0; i < appOptions.length; i++) {
-    if (appOptions[i].checked) {
-      appInput += appOptions[i].value + ", ";
+  // Material selected
+  let material = "";
+  let materialPrice = 0;
+//7. Arithmetic Operators
+//8. Array
+  for (let i = 0; i < shirtMaterial.length; i++) {
+    if (shirtMaterial[i].selected && shirtMaterial[i].value !== "0") {
+      material = shirtMaterial[i].textContent;
+      materialPrice = parseInt(shirtMaterial[i].value);
+      break;
     }
   }
-  appInput = appInput ? appInput.slice(0, -2) : "No application type selected.";
-  document.getElementById("AppType").innerHTML = appInput;
+
+
+  // Application method selected
+  let appMethods = [];
+  const appOptions = document.querySelectorAll('input[type="checkbox"]:checked');
+  let appPrice = 0;
+  appOptions.forEach(option => {
+    appMethods.push(option.parentElement.textContent.trim());
+    appPrice += parseInt(option.value);
+  });
+
+
+  // Calculate total price
+  total = materialPrice + appPrice;
+
+
+  // Display the receipt (without strong or span)
+  document.getElementById("FullName").textContent = "Name: " + fullName.value;
+  document.getElementById("EmailAddress").textContent = "Email: " + email.value;
+  document.getElementById("TShirtColor").textContent = "Color: " + shirtColor;
+  document.getElementById("MaterialType").textContent = "Material Payment: " + material;// + " ($" + materialPrice + ")";
+  document.getElementById("AppType").textContent = "Application Payment: " + (appMethods.length > 0 ? appMethods.join(", ") : "None");
+  document.getElementById("TotalPrice").textContent = "Total: $" + total;
+
+
+  // Show the receipt section
+  document.getElementById("orderReceipt").style.display = "block";
 }
-
-button.addEventListener("click", fun1);
-
