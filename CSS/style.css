@@ -1,5 +1,10 @@
 /*INDEX PAGE CSS*/
 
+/*CSS for order reciept*/
+#orderReceipt {
+  display: none;
+}
+
 /*CSS for header*/
 header {
   display: flex;
